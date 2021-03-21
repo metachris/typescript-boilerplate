@@ -19,7 +19,7 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "outDir": "./lib/",
+    "outDir": "./build/",
     "types": [
       "node",
       "jest"

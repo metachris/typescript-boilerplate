@@ -1,13 +1,14 @@
 {
-  "name": "typescript-library-boilerplate",
+  "name": "typescript-nodejs-boilerplate",
   "version": "1.0.0",
   "description": "Boilerplate for a TypeScript library",
-  "main": "./lib/main.js",
-  "types": "./lib/main.d.ts",
   "author": "Chris Hager <chris@linuxuser.at>",
+  "repository": "https://github.com/metachris/typescript-nodejs-boilerplate",
   "license": "MIT",
+  "main": "./build/main.js",
+  "types": "./build/main.d.ts",
   "scripts": {
-    "clean": "rm -rf dist build lib",
+    "clean": "rm -rf dist build",
     "lint": "tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
     "build": "tsc -p tsconfig.json",
     "test": "jest"

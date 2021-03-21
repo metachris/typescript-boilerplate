@@ -6,6 +6,6 @@ Base project setup for a TypeScript library:
 * Output of types in `/lib/*.d.ts`
 * Testing setup with Jest and ts-jest (no need to compile before running the tests)
 
-Just clone it and edit package.json to your liking.
+Just clone it and edit `package.json` to your liking.
 
 Happy Hacking 🛠

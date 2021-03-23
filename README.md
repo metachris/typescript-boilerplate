@@ -9,3 +9,9 @@ Base project setup for a TypeScript library:
 Just clone it and edit `package.json` to your liking.
 
 Happy Hacking 🛠
+
+---
+
+Add:
+
+* web target (esbuild, webpack)

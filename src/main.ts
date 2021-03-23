@@ -1,5 +1,7 @@
+export const greet = (name: string) => `Hello ${name}`
+
 const main = async () => {
-  console.log('hello')
+  console.log(greet('World'))
 }
 
 main()

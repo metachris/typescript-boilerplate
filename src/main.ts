@@ -4,4 +4,6 @@ const main = async () => {
   console.log(greet('World'))
 }
 
-main()
+if (require.main === module) {
+  main()
+}

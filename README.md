@@ -1,14 +1,14 @@
 # TypeScript + Node.js Project Boilerplate
 
-TypeScript + Node.js project with modern tooling (March 2021) to get started quickly and right-footed.
+TypeScript + Node.js project with modern tooling (March 2021) to get started quickly and right-footed. Ideal for quick projects as well as npm packages.
 
 Batteries included:
 
-* TypeScript 4
+* TypeScript 4, optionally [esbuild](https://esbuild.github.io/)
 * Linting with [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) ([tslint](https://palantir.github.io/tslint/) is deprecated)
 * Tests with [Jest](https://jestjs.io/docs/getting-started) (and [ts-jest](https://www.npmjs.com/package/ts-jest))
 * CI for testing and linting ([GitHub Actions](https://docs.github.com/en/actions) / [Gitlab CI](https://docs.gitlab.com/ee/ci/))
-* Ideal for npm packages
+* Automatic API documentation with [typedoc](https://typedoc.org/guides/doccomments/)
 
 See also the [introduction blog post](https://www.metachris.com/2021/03/bootstrapping-a-typescript-node.js-project/).
 

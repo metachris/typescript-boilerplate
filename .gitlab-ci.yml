@@ -6,6 +6,7 @@ cache:
 
 stages:
   - test
+  - deploy
 
 lint-and-test:
   stage: test
@@ -14,3 +15,16 @@ lint-and-test:
     - yarn build
     - yarn test
     - yarn lint
+
+# Deploy docs to Gitlab pages
+# pages:
+#   stage: deploy
+#   only:
+#     - master
+#   script:
+#     - yarn install
+#     - yarn docs
+#     - mv docs public
+#   artifacts:
+#     paths:
+#       - public

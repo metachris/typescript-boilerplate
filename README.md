@@ -18,6 +18,13 @@ See also the [introduction blog post](https://www.metachris.com/2021/03/bootstra
 * Now you can run `yarn run`, `yarn lint`, `yarn test`, `yarn build` and `yarn ts-node <filename>`.
 * For publishing to npm, use `yarn publish` (or `npm publish`)
 
+Want documentation, published to GitHub or GitLab pages?
+
+* Install [typedoc](https://typedoc.org/guides/doccomments/): `yarn add -D typedoc`
+* Add `docs` script to `package.json`: `"docs": "typedoc"`
+* Publish to pages through CI:
+  * [GitHub pages](https://pages.github.com/): uncomment content of `.github/workflows/deploy-gh-pages.yml` and enable pages in GitHub repo settings
+  * [GitLab pages](https://docs.gitlab.com/ee/user/project/pages/): uncomment deploy task in `.gitlab-ci.yml`
 
 ### References
 

@@ -1,0 +1,12 @@
+image: node:12
+
+stages:
+  - test
+
+lint-and-test:
+  stage: test
+  script:
+    - yarn install
+    - yarn build
+    - yarn test
+    - yarn lint

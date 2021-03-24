@@ -1,4 +1,3 @@
-# https://github.com/actions/setup-node
 name: Lint and test
 
 on: [push]
@@ -9,9 +8,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
+    # https://github.com/actions/setup-node
     - uses: actions/setup-node@v2-beta
       with:
         node-version: '12'
+
     - run: yarn install
     - run: yarn lint
     - run: yarn test

@@ -1,17 +1,23 @@
 # TypeScript + Node.js Project Boilerplate
 
-Base project setup for a TypeScript library:
+TypeScript + Node.js project with modern tooling (March 2021).
 
-* TypeScript building from `/src/*.ts` to `/build/*.js`
-* Output of types in `/build/*.d.ts`
-* Testing setup with Jest and ts-jest (no need to compile before running the tests)
+* TypeScript 4
+* Linting with [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) ([tslint](https://palantir.github.io/tslint/) is deprecated)
+* Tests with [Jest](https://jestjs.io/docs/getting-started) (and [ts-jest](https://www.npmjs.com/package/ts-jest))
+* CI for testing and linting ([GitHub Actions](https://docs.github.com/en/actions) / [Gitlab CI](https://docs.gitlab.com/ee/ci/))
 
-Just clone it and edit `package.json` to your liking.
 
-Happy Hacking 🛠
+# Getting Started
 
----
+* Clone the repository
+* Edit `package.json` and `tsconfig.json` to your liking
+* Now you can run `yarn run`, `yarn lint`, `yarn test`, `yarn build` and `yarn ts-node <filename>`.
 
-Add:
 
-* web target (esbuild, webpack)
+# Feedback
+
+Please post your feedback and/or ideas:
+
+* [twitter.com/metachris](https://twitter.com/metachris)
+* [Create a new issue](https://github.com/metachris/typescript-nodejs-boilerplate/issues)

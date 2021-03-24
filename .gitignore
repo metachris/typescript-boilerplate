@@ -4,7 +4,6 @@
 /dist/
 .idea/*
 
+.DS_Store
 coverage
 *.log
-
-package-lock.json

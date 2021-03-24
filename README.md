@@ -47,9 +47,10 @@ node dist/out.js
 ## References
 
 * [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-* [tsconfig documentation](https://www.typescriptlang.org/tsconfig)
-* [typescript-eslint documentation](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md)
-* [Jest documentation](https://jestjs.io/docs/getting-started)
+* [esbuild docs](https://esbuild.github.io/)
+* [tsconfig docs](https://www.typescriptlang.org/tsconfig)
+* [typescript-eslint docs](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md)
+* [Jest docs](https://jestjs.io/docs/getting-started)
 * [GitHub Actions](https://docs.github.com/en/actions), [GitLab CI](https://docs.gitlab.com/ee/ci/)
 
 

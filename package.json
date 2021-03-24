@@ -5,8 +5,8 @@
   "author": "Chris Hager <chris@linuxuser.at>",
   "repository": "https://github.com/metachris/typescript-nodejs-boilerplate",
   "license": "MIT",
-  "main": "./build/main.js",
-  "types": "./build/main.d.ts",
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
   "scripts": {
     "start": "ts-node src/main.ts",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",

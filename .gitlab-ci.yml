@@ -1,5 +1,9 @@
 image: node:12
 
+cache:
+  paths:
+    - node_modules/
+
 stages:
   - test
 

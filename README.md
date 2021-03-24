@@ -8,14 +8,23 @@ TypeScript + Node.js project with modern tooling (March 2021).
 * CI for testing and linting ([GitHub Actions](https://docs.github.com/en/actions) / [Gitlab CI](https://docs.gitlab.com/ee/ci/))
 
 
-# Getting Started
+### Getting Started
 
 * Clone the repository
 * Edit `package.json` and `tsconfig.json` to your liking
 * Now you can run `yarn run`, `yarn lint`, `yarn test`, `yarn build` and `yarn ts-node <filename>`.
 
 
-# Feedback
+
+### References
+
+* [tsconfig documentation](https://www.typescriptlang.org/tsconfig)
+* [typescript-eslint documentation](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md)
+* [Jest documentation](https://jestjs.io/docs/getting-started)
+* [GitHub Actions](https://docs.github.com/en/actions), [GitLab CI](https://docs.gitlab.com/ee/ci/)
+
+
+### Feedback
 
 Please post your feedback and/or ideas:
 

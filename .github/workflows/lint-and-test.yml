@@ -15,7 +15,7 @@ jobs:
     # https://github.com/actions/setup-node
     - uses: actions/setup-node@v2-beta
       with:
-        node-version: '12'
+        node-version: ${{ matrix.nodejs }}
 
     - run: yarn install
     - run: yarn lint

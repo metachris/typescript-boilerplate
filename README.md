@@ -31,7 +31,7 @@ See also the [introduction blog post](https://www.metachris.com/2021/03/bootstra
 ### Prefer to use esbuild?
 
 You can use [esbuild](https://esbuild.github.io/) instead of the default TypeScript compiler (`tsc`) to build and bundle the output.
-esbuild is an extremely fast bundler that supports a large part of the TypeScript syntax.
+`esbuild` is an extremely fast bundler that supports a [large part of the TypeScript syntax](https://esbuild.github.io/content-types/#typescript).
 
 ```bash
 # Install esbuild

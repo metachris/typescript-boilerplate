@@ -5,6 +5,9 @@ on: [push]
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        nodejs: [10, 12, 14]
 
     steps:
     - uses: actions/checkout@v2

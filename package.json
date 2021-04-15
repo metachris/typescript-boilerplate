@@ -1,37 +1,40 @@
 {
-  "name": "typescript-nodejs-boilerplate",
-  "version": "1.0.0",
+  "name": "typescript-boilerplate-2021",
+  "version": "0.1.1",
   "description": "Boilerplate for a TypeScript library",
   "author": "Chris Hager <chris@linuxuser.at>",
   "repository": "https://github.com/metachris/typescript-nodejs-boilerplate",
   "license": "MIT",
-  "main": "./dist/main.js",
-  "types": "./dist/main.d.ts",
-  "browser": "./dist/browser.js",
+  "main": "./dist/tsc/main.js",
+  "types": "./dist/tsc/main.d.ts",
+  "browser": "./dist/esbuild/browser.js",
   "bin": {
-    "my-cli-tool": "./dist/cli.js"
+    "my-cli-tool": "./dist/tsc/cli.js"
   },
   "scripts": {
     "start": "ts-node src/main.ts",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "test": "jest",
-    "clean": "rm -rf dist build",
+    "clean": "rm -rf dist build package",
     "ts-node": "ts-node",
+    "docs": "typedoc --entryPoints src/main.ts",
     "build": "tsc -p tsconfig.json",
-    "esbuild-browser": "esbuild src/browser.ts --bundle --minify --sourcemap=external --outfile=dist/browser.js",
-    "esbuild-browser:dev": "esbuild src/browser.ts --bundle --outfile=dist/browser.js",
-    "esbuild-node": "esbuild src/main.ts --bundle --platform=node --minify --sourcemap=external --outfile=dist/main.js",
-    "esbuild-node:dev": "esbuild src/main.ts --bundle --sourcemap=external --outfile=dist/main.js"
+    "esbuild-browser": "esbuild src/browser.ts --bundle --minify --sourcemap=external --outfile=dist/esbuild/browser.js",
+    "esbuild-browser:dev": "esbuild src/browser.ts --bundle --outfile=dist/esbuild/browser.js",
+    "esbuild-node": "esbuild src/cli.ts --bundle --platform=node --minify --sourcemap=external --outfile=dist/esbuild/cli.js",
+    "esbuild-node:dev": "esbuild src/cli.ts --bundle --sourcemap=external --outfile=dist/esbuild/cli.js"
   },
   "devDependencies": {
     "@types/jest": "^26.0.21",
     "@types/node": "^14.14.35",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
+    "esbuild": "^0.11.11",
     "eslint": "^7.22.0",
     "jest": "^26.6.3",
     "ts-jest": "^26.5.4",
     "ts-node": "^9.1.1",
+    "typedoc": "^0.20.35",
     "typescript": "^4.2.3"
   }
 }

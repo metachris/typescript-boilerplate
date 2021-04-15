@@ -1,6 +1,6 @@
-# TypeScript + Node.js Project Boilerplate
+# TypeScript Project Boilerplate
 
-TypeScript + Node.js project with modern tooling (March 2021) to get started quickly and right-footed. Ideal for quick projects as well as npm packages.
+TypeScript project with modern tooling (March 2021) to get started quickly and right-footed. Ideal for quick projects as well as npm packages.
 
 Batteries included:
 
@@ -26,7 +26,7 @@ See also the [introduction blog post](https://www.metachris.com/2021/03/bootstra
 You can auto-generate API documentation from the TyoeScript source files using [typedoc](https://typedoc.org/guides/doccomments/). The generated documentation can be published to GitHub / GitLab pages through the CI:
 
 * Install [typedoc](https://typedoc.org/guides/doccomments/): `yarn add -D typedoc`
-* Add `docs` script to `package.json`: `"docs": "typedoc --entryPoints src/lib.ts"`
+* Add `docs` script to `package.json`: `"docs": "typedoc --entryPoints src/main.ts"`
 * You can now generate the documentation with `yarn docs`. The resulting HTML is saved in `docs/`.
 * Publish to pages through CI:
   * [GitHub pages](https://pages.github.com/): uncomment content of `.github/workflows/deploy-gh-pages.yml` and enable pages in GitHub repo settings
@@ -50,7 +50,6 @@ yarn add -D esbuild
 # Run the bundled output
 node dist/out.js
 ```
-
 You can also use esbuild to build for browsers:
 
 ```bash
@@ -60,7 +59,7 @@ You can also use esbuild to build for browsers:
 
 ## References
 
-* [Introduction blog post](https://www.metachris.com/2021/03/bootstrapping-a-typescript-node.js-project/)
+* [Blog post: Starting a TypeScript Project in 2021](https://www.metachris.com/2021/03/bootstrapping-a-typescript-node.js-project/)
 * [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 * [esbuild docs](https://esbuild.github.io/)
 * [tsconfig docs](https://www.typescriptlang.org/tsconfig)

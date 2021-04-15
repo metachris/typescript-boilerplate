@@ -7,13 +7,21 @@
   "license": "MIT",
   "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
+  "browser": "./dist/browser.js",
+  "bin": {
+    "my-cli-tool": "./dist/cli.js"
+  },
   "scripts": {
     "start": "ts-node src/main.ts",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "test": "jest",
-    "build": "tsc -p tsconfig.json",
     "clean": "rm -rf dist build",
-    "ts-node": "ts-node"
+    "ts-node": "ts-node",
+    "build": "tsc -p tsconfig.json",
+    "esbuild-browser": "esbuild src/browser.ts --bundle --minify --sourcemap=external --outfile=dist/browser.js",
+    "esbuild-browser:dev": "esbuild src/browser.ts --bundle --outfile=dist/browser.js",
+    "esbuild-node": "esbuild src/main.ts --bundle --platform=node --minify --sourcemap=external --outfile=dist/main.js",
+    "esbuild-node:dev": "esbuild src/main.ts --bundle --sourcemap=external --outfile=dist/main.js"
   },
   "devDependencies": {
     "@types/jest": "^26.0.21",

@@ -8,6 +8,7 @@
 
 coverage
 *.log
+.gitlab-ci.yml
 
 package-lock.json
 /*.tgz

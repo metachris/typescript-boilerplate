@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "description": "Boilerplate for a TypeScript library",
   "author": "Chris Hager <chris@linuxuser.at>",
-  "repository": "https://github.com/metachris/typescript-nodejs-boilerplate",
+  "repository": "https://github.com/metachris/typescript-boilerplate",
   "license": "MIT",
   "main": "./dist/tsc/main.js",
   "types": "./dist/tsc/main.d.ts",
@@ -12,7 +12,7 @@
     "my-cli-tool": "./dist/esbuild/cli.js"
   },
   "scripts": {
-    "start": "ts-node src/main.ts",
+    "cli": "ts-node src/cli.ts",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "test": "jest",
     "clean": "rm -rf dist build package",

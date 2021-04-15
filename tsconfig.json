@@ -18,7 +18,7 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "outDir": "./dist/",
+    "outDir": "./dist/tsc/",
     "types": [
       "node",
       "jest"

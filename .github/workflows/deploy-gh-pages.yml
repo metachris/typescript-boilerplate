@@ -7,10 +7,10 @@ name: Deploy to Github pages
 
 on:
   push:
-    tags:
-      - v*
-    # branches:
-      # - master
+    #tags:
+    #  - v*
+    branches:
+      - master
 
 jobs:
   deploy_pages:

@@ -32,29 +32,20 @@ You can auto-generate API documentation from the TyoeScript source files using [
   * [GitHub pages](https://pages.github.com/): uncomment content of `.github/workflows/deploy-gh-pages.yml` and enable pages in GitHub repo settings
   * [GitLab pages](https://docs.gitlab.com/ee/user/project/pages/): uncomment deploy task in `.gitlab-ci.yml`
 
-### Prefer to use esbuild?
+### esbuild
 
-You can use [esbuild](https://esbuild.github.io/) instead of the default TypeScript compiler (`tsc`) to build and bundle the output.
+You can use [esbuild](https://esbuild.github.io/) instead of the default TypeScript compiler (`tsc`) to build and bundle the output for node and browsers.
 `esbuild` is an extremely fast bundler that supports a [large part of the TypeScript syntax](https://esbuild.github.io/content-types/#typescript).
 
 ```bash
 # Install esbuild
 yarn add -D esbuild
 
-# Compile and bundle
-./node_modules/.bin/esbuild src/main.ts --bundle --platform=node --outfile=dist/out.js
+# Compile and bundle, with cli as entrypoint
+./node_modules/.bin/esbuild src/cli.ts --bundle --platform=node --outfile=dist/esbuild/cli.js
 
-# Also minify and create sourcemaps
-./node_modules/.bin/esbuild src/main.ts --bundle --platform=node --minify --sourcemap=external --outfile=dist/out.js
-
-# Run the bundled output
-node dist/out.js
-```
-You can also use esbuild to build for browsers:
-
-```bash
-# Bundle for browsers
-./node_modules/.bin/esbuild src/main.ts --bundle --minify --sourcemap=external --outfile=dist/browser.js
+# Build for browsers
+./node_modules/.bin/esbuild src/browser.ts --bundle --outfile=dist/browser.js
 ```
 
 ## References

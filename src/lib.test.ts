@@ -1,4 +1,4 @@
-import { greet } from './main'
+import { greet } from './lib'
 
 test('the data is peanut butter', () => {
   expect(1).toBe(1)

@@ -1,9 +1,3 @@
-export const greet = (name: string): string => `Hello ${name}`
+import { foo } from './lib'
 
-const main = async () => {
-  console.log(greet('World'))
-}
-
-if (require.main === module) {
-  main()
-}
+foo()

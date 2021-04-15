@@ -9,6 +9,7 @@ Batteries included:
 * Tests with [Jest](https://jestjs.io/docs/getting-started) (and [ts-jest](https://www.npmjs.com/package/ts-jest))
 * CI for testing and linting ([GitHub Actions](https://docs.github.com/en/actions) / [Gitlab CI](https://docs.gitlab.com/ee/ci/))
 * Automatic API documentation with [typedoc](https://typedoc.org/guides/doccomments/)
+* Building a browser-compatible module with [esbuild](https://esbuild.github.io/) or [webpack](https://webpack.js.org/)
 
 See also the [introduction blog post](https://www.metachris.com/2021/03/bootstrapping-a-typescript-node.js-project/).
 
@@ -25,7 +26,7 @@ See also the [introduction blog post](https://www.metachris.com/2021/03/bootstra
 You can auto-generate API documentation from the TyoeScript source files using [typedoc](https://typedoc.org/guides/doccomments/). The generated documentation can be published to GitHub / GitLab pages through the CI:
 
 * Install [typedoc](https://typedoc.org/guides/doccomments/): `yarn add -D typedoc`
-* Add `docs` script to `package.json`: `"docs": "typedoc --entryPoints src/main.ts"`
+* Add `docs` script to `package.json`: `"docs": "typedoc --entryPoints src/lib.ts"`
 * You can now generate the documentation with `yarn docs`. The resulting HTML is saved in `docs/`.
 * Publish to pages through CI:
   * [GitHub pages](https://pages.github.com/): uncomment content of `.github/workflows/deploy-gh-pages.yml` and enable pages in GitHub repo settings
@@ -40,15 +41,26 @@ You can use [esbuild](https://esbuild.github.io/) instead of the default TypeScr
 # Install esbuild
 yarn add -D esbuild
 
-# Compile and bundle (prints to stdout)
+# Compile and bundle
 ./node_modules/.bin/esbuild src/main.ts --bundle --platform=node --outfile=dist/out.js
+
+# Also minify and create sourcemaps
+./node_modules/.bin/esbuild src/main.ts --bundle --platform=node --minify --sourcemap=external --outfile=dist/out.js
 
 # Run the bundled output
 node dist/out.js
 ```
 
+You can also use esbuild to build for browsers:
+
+```bash
+# Bundle for browsers
+./node_modules/.bin/esbuild src/main.ts --bundle --minify --sourcemap=external --outfile=dist/browser.js
+```
+
 ## References
 
+* [Introduction blog post](https://www.metachris.com/2021/03/bootstrapping-a-typescript-node.js-project/)
 * [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 * [esbuild docs](https://esbuild.github.io/)
 * [tsconfig docs](https://www.typescriptlang.org/tsconfig)

@@ -58,20 +58,22 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#typescript-project-boilerplate" id="typescript-project-boilerplate" style="color: inherit; text-decoration: none;">
-					<h1>TypeScript Project Boilerplate</h1>
+				<a href="#typescript-boilerplate-for-2021" id="typescript-boilerplate-for-2021" style="color: inherit; text-decoration: none;">
+					<h1>TypeScript Boilerplate for 2021</h1>
 				</a>
-				<p>TypeScript project boilerplate for 2021, with modern tooling. To get started quickly and right-footed for Node.js and browser projects and npm libraries.</p>
-				<p>Batteries included:</p>
+				<p><a href="https://github.com/metachris/micropython-ctl/actions?query=workflow%3A%22Build+and+test%22"><img src="https://github.com/metachris/typescript-nodejs-boilerplate/workflows/Lint%20and%20test/badge.svg" alt="Build and test status"></a></p>
+				<p>Get started quickly and right-footed</p>
+				<p>TypeScript project boilerplate with modern tooling, targetting for Node.js and browser.</p>
 				<ul>
-					<li>TypeScript 4, optionally <a href="https://esbuild.github.io/">esbuild</a></li>
+					<li><a href="https://www.typescriptlang.org/">TypeScript</a> 4</li>
+					<li>Optionally <a href="https://esbuild.github.io/">esbuild</a> - to bundle for browsers and Node.js</li>
 					<li>Linting with <a href="https://github.com/typescript-eslint/typescript-eslint">typescript-eslint</a> (<a href="https://palantir.github.io/tslint/">tslint</a> is deprecated)</li>
-					<li>Tests with <a href="https://jestjs.io/docs/getting-started">Jest</a> (and <a href="https://www.npmjs.com/package/ts-jest">ts-jest</a>)</li>
-					<li>CI for testing and linting (<a href="https://docs.github.com/en/actions">GitHub Actions</a> / <a href="https://docs.gitlab.com/ee/ci/">Gitlab CI</a>)</li>
-					<li>Automatic API documentation with <a href="https://typedoc.org/guides/doccomments/">typedoc</a></li>
-					<li>Building a browser-compatible module with <a href="https://esbuild.github.io/">esbuild</a> or <a href="https://webpack.js.org/">webpack</a></li>
+					<li>Testing with <a href="https://jestjs.io/docs/getting-started">Jest</a> (and <a href="https://www.npmjs.com/package/ts-jest">ts-jest</a>)</li>
+					<li>Publishing to npm</li>
+					<li>Continuous integration (<a href="https://docs.github.com/en/actions">GitHub Actions</a> / <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a>)</li>
+					<li>Automatic API documentation with <a href="https://typedoc.org/guides/doccomments/">TypeDoc</a></li>
 				</ul>
-				<p>See also the <a href="https://www.metachris.com/2021/03/bootstrapping-a-typescript-node.js-project/">introduction blog post</a>.</p>
+				<p>See also the introduction blog post: <a href="https://www.metachris.com/2021/03/bootstrapping-a-typescript-node.js-project/">Starting a TypeScript Project in 2021</a>.</p>
 				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
 					<h2>Getting Started</h2>
 				</a>
@@ -79,10 +81,26 @@
 					<li>Clone the repository (you can also click &quot;Use this template&quot;)</li>
 					<li>Edit <code>package.json</code> and <code>tsconfig.json</code> to your liking</li>
 					<li>Now you can run <code>yarn run</code>, <code>yarn lint</code>, <code>yarn test</code>, <code>yarn build</code> and <code>yarn ts-node &lt;filename&gt;</code>.</li>
+					<li>Take a look at all the scripts in <a href="https://github.com/metachris/typescript-boilerplate/blob/master/package.json"><code>package.json</code></a></li>
 					<li>For publishing to npm, use <code>yarn publish</code> (or <code>npm publish</code>)</li>
 				</ul>
-				<a href="#want-documentation-published-to-github-or-gitlab-pages" id="want-documentation-published-to-github-or-gitlab-pages" style="color: inherit; text-decoration: none;">
-					<h3>Want documentation, published to GitHub or GitLab pages?</h3>
+				<a href="#esbuild" id="esbuild" style="color: inherit; text-decoration: none;">
+					<h2>esbuild</h2>
+				</a>
+				<p>You can use <a href="https://esbuild.github.io/">esbuild</a> to bundle for browsers (and Node.js if you want).
+				<code>esbuild</code> is an extremely fast bundler that supports a <a href="https://esbuild.github.io/content-types/#typescript">large part of the TypeScript syntax</a>.</p>
+				<pre><code class="language-bash"><span style="color: #008000"># Install esbuild</span>
+<span style="color: #000000">yarn add -D esbuild</span>
+
+<span style="color: #008000"># Compile and bundle, with cli as entrypoint</span>
+<span style="color: #000000">./node_modules/.bin/esbuild src/cli.ts --bundle --platform=node --outfile=dist/esbuild/cli.js</span>
+
+<span style="color: #008000"># Build for browsers</span>
+<span style="color: #000000">./node_modules/.bin/esbuild src/browser.ts --bundle --outfile=dist/esbuild/browser.js</span>
+</code></pre>
+				<p>You can build everything with <code>yarn build</code>. Read more about the esbuild setup <a href="TODO">here</a>.</p>
+				<a href="#documentation-published-to-github-or-gitlab-pages" id="documentation-published-to-github-or-gitlab-pages" style="color: inherit; text-decoration: none;">
+					<h2>Documentation, published to GitHub or GitLab pages</h2>
 				</a>
 				<p>You can auto-generate API documentation from the TyoeScript source files using <a href="https://typedoc.org/guides/doccomments/">typedoc</a>. The generated documentation can be published to GitHub / GitLab pages through the CI:</p>
 				<ul>
@@ -95,28 +113,14 @@
 						</ul>
 					</li>
 				</ul>
-				<a href="#esbuild" id="esbuild" style="color: inherit; text-decoration: none;">
-					<h3>esbuild</h3>
-				</a>
-				<p>You can use <a href="https://esbuild.github.io/">esbuild</a> instead of the default TypeScript compiler (<code>tsc</code>) to build and bundle the output for node and browsers.
-				<code>esbuild</code> is an extremely fast bundler that supports a <a href="https://esbuild.github.io/content-types/#typescript">large part of the TypeScript syntax</a>.</p>
-				<pre><code class="language-bash"><span style="color: #008000"># Install esbuild</span>
-<span style="color: #000000">yarn add -D esbuild</span>
-
-<span style="color: #008000"># Compile and bundle, with cli as entrypoint</span>
-<span style="color: #000000">./node_modules/.bin/esbuild src/cli.ts --bundle --platform=node --outfile=dist/esbuild/cli.js</span>
-
-<span style="color: #008000"># Build for browsers</span>
-<span style="color: #000000">./node_modules/.bin/esbuild src/browser.ts --bundle --outfile=dist/browser.js</span>
-</code></pre>
 				<a href="#references" id="references" style="color: inherit; text-decoration: none;">
 					<h2>References</h2>
 				</a>
 				<ul>
-					<li><a href="https://www.metachris.com/2021/03/bootstrapping-a-typescript-node.js-project/">Blog post: Starting a TypeScript Project in 2021</a></li>
+					<li><strong><a href="https://www.metachris.com/2021/03/bootstrapping-a-typescript-node.js-project/">Blog post: Starting a TypeScript Project in 2021</a></strong></li>
 					<li><a href="https://www.typescriptlang.org/docs/handbook/intro.html">TypeScript Handbook</a></li>
-					<li><a href="https://esbuild.github.io/">esbuild docs</a></li>
 					<li><a href="https://www.typescriptlang.org/tsconfig">tsconfig docs</a></li>
+					<li><a href="https://esbuild.github.io/">esbuild docs</a></li>
 					<li><a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md">typescript-eslint docs</a></li>
 					<li><a href="https://jestjs.io/docs/getting-started">Jest docs</a></li>
 					<li><a href="https://docs.github.com/en/actions">GitHub Actions</a>, <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a></li>

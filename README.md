@@ -41,7 +41,9 @@ yarn add -D esbuild
 ./node_modules/.bin/esbuild src/browser.ts --bundle --outfile=dist/esbuild/browser.js
 ```
 
-You can build everything with `yarn build`. Read more about the esbuild setup [here](TODO).
+You can build everything with `yarn build`. Read more about the esbuild setup [here](https://www.metachris.com/2021/04/starting-a-typescript-project-in-2021/#esbuild).
+
+This `package.json` includes `scripts` for various esbuild commands: [see here](https://github.com/metachris/typescript-boilerplate/blob/master/package.json#L23)
 
 ## Documentation, published to GitHub or GitLab pages
 

@@ -80,7 +80,8 @@
 				<ul>
 					<li>Clone the repository (you can also click &quot;Use this template&quot;)</li>
 					<li>Edit <code>package.json</code> and <code>tsconfig.json</code> to your liking</li>
-					<li>Now you can run <code>yarn run</code>, <code>yarn lint</code>, <code>yarn test</code>, <code>yarn build</code> and <code>yarn ts-node &lt;filename&gt;</code>.</li>
+					<li>Install dependencies with <code>yarn install</code></li>
+					<li>Now you can run <code>yarn cli</code>, <code>yarn lint</code>, <code>yarn test</code>, <code>yarn build-all</code> and <code>yarn ts-node &lt;filename&gt;</code>.</li>
 					<li>Take a look at all the scripts in <a href="https://github.com/metachris/typescript-boilerplate/blob/master/package.json"><code>package.json</code></a></li>
 					<li>For publishing to npm, use <code>yarn publish</code> (or <code>npm publish</code>)</li>
 				</ul>
@@ -89,16 +90,15 @@
 				</a>
 				<p>You can use <a href="https://esbuild.github.io/">esbuild</a> to bundle for browsers (and Node.js if you want).
 				<code>esbuild</code> is an extremely fast bundler that supports a <a href="https://esbuild.github.io/content-types/#typescript">large part of the TypeScript syntax</a>.</p>
-				<pre><code class="language-bash"><span style="color: #008000"># Install esbuild</span>
-<span style="color: #000000">yarn add -D esbuild</span>
-
-<span style="color: #008000"># Compile and bundle, with cli as entrypoint</span>
-<span style="color: #000000">./node_modules/.bin/esbuild src/cli.ts --bundle --platform=node --outfile=dist/esbuild/cli.js</span>
+				<pre><code class="language-bash"><span style="color: #008000"># Build the cli for node</span>
+<span style="color: #000000">yarn esbuild-node:dev</span>
+<span style="color: #000000">yarn esbuild-node:watch</span>
 
 <span style="color: #008000"># Build for browsers</span>
-<span style="color: #000000">./node_modules/.bin/esbuild src/browser.ts --bundle --outfile=dist/esbuild/browser.js</span>
+<span style="color: #000000">yarn esbuild-browser:dev</span>
+<span style="color: #000000">yarn esbuild-browser:watch</span>
 </code></pre>
-				<p>You can build everything with <code>yarn build</code>. Read more about the esbuild setup <a href="https://www.metachris.com/2021/04/starting-a-typescript-project-in-2021/#esbuild">here</a>.</p>
+				<p>You can build everything with <code>yarn build-all</code>. Read more about the esbuild setup <a href="https://www.metachris.com/2021/04/starting-a-typescript-project-in-2021/#esbuild">here</a>.</p>
 				<p>This <code>package.json</code> includes <code>scripts</code> for various esbuild commands: <a href="https://github.com/metachris/typescript-boilerplate/blob/master/package.json#L23">see here</a></p>
 				<a href="#documentation-published-to-github-or-gitlab-pages" id="documentation-published-to-github-or-gitlab-pages" style="color: inherit; text-decoration: none;">
 					<h2>Documentation, published to GitHub or GitLab pages</h2>

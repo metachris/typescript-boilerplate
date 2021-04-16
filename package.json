@@ -5,6 +5,7 @@
   "author": "Chris Hager <chris@linuxuser.at>",
   "repository": "https://github.com/metachris/typescript-boilerplate",
   "license": "MIT",
+  "keywords": ["typescript", "boilerplate", "esbuild"],
   "main": "./dist/tsc/main.js",
   "types": "./dist/tsc/main.d.ts",
   "browser": "./dist/esbuild/browser.js",

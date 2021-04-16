@@ -1,11 +1,12 @@
 name: Lint and test
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         nodejs: [10, 12, 14]
 

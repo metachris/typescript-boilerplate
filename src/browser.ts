@@ -1,8 +1,6 @@
 /**
  * This file is the entrypoint of browser builds.
- * Executes when loaded in a browser.
- *
- * This example adds a custom method to the window object.
+ * The code executes when loaded in a browser.
  */
 import { foo } from './main'
 

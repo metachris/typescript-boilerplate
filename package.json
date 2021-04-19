@@ -1,6 +1,6 @@
 {
   "name": "typescript-boilerplate-2021",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Boilerplate for TypeScript projects (Node.js and browser modules)",
   "author": "Chris Hager <chris@linuxuser.at>",
   "repository": "https://github.com/metachris/typescript-boilerplate",

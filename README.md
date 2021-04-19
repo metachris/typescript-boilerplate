@@ -2,7 +2,7 @@
 
 [![Build and test status](https://github.com/metachris/typescript-boilerplate/workflows/Lint%20and%20test/badge.svg)](https://github.com/metachris/micropython-ctl/actions?query=workflow%3A%22Build+and+test%22)
 
-TypeScript project boilerplate with modern tooling, for Node.js and browser. Get started quickly and right-footed 🚀
+TypeScript project boilerplate with modern tooling, for Node.js programs, libraries and browser modules. Get started quickly and right-footed 🚀
 
 * [TypeScript 4](https://www.typescriptlang.org/)
 * Optionally [esbuild](https://esbuild.github.io/) to bundle for browsers (and Node.js)
@@ -61,19 +61,44 @@ You can generate a full build with both `tsc` and `esbuild` with `yarn build-all
 * `esbuild` has a `--global-name=xyz` flag, to store the exports from the entry point in a global variable. See also the [esbuild "Global name" docs](https://esbuild.github.io/api/#global-name).
 * Read more about the esbuild setup [here](https://www.metachris.com/2021/04/starting-a-typescript-project-in-2021/#esbuild).
 
+
+## Tests with Jest
+
+You can write [Jest tests](https://jestjs.io/docs/getting-started) [like this](https://github.com/metachris/typescript-boilerplate/blob/master/src/main.test.ts):
+
+```typescript
+import { greet } from './main'
+
+test('the data is peanut butter', () => {
+  expect(1).toBe(1)
+});
+
+test('greeting', () => {
+  expect(greet('Foo')).toBe('Hello Foo')
+});
+```
+
+Run the tests with `yarn test`, no separate compile step is necessary.
+
+* See also the [Jest documentation](https://jestjs.io/docs/getting-started).
+* The tests can be automatically run in CI (GitHub Actions, GitLab CI): [`.github/workflows/lint-and-test.yml`](https://github.com/metachris/typescript-boilerplate/blob/master/.github/workflows/lint-and-test.yml), [`.gitlab-ci.yml`](https://github.com/metachris/typescript-boilerplate/blob/master/.gitlab-ci.yml)
+
+
 ## Documentation, published with CI
 
-You can auto-generate API documentation from the TyoeScript source files using [TypeDoc](https://typedoc.org/guides/doccomments/). The generated documentation can be published to GitHub / GitLab pages through the CI:
+You can auto-generate API documentation from the TyoeScript source files using [TypeDoc](https://typedoc.org/guides/doccomments/). The generated documentation can be published to GitHub / GitLab pages through the CI.
+
+Generate the documentation, using `src/main.ts` as entrypoint (configured in package.json):
 
 ```bash
 yarn docs
 ```
 
-The resulting HTML is saved in `docs/`. It uses `src/main.ts` as entrypoint (configured in package.json).
+The resulting HTML is saved in `docs/`.
 
 You can publish the documentation through CI:
-* [GitHub pages](https://pages.github.com/): uncomment content of `.github/workflows/deploy-gh-pages.yml` and enable pages in GitHub repo settings
-* [GitLab pages](https://docs.gitlab.com/ee/user/project/pages/): uncomment deploy task in `.gitlab-ci.yml`
+* [GitHub pages](https://pages.github.com/): See [`.github/workflows/deploy-gh-pages.yml`](https://github.com/metachris/typescript-boilerplate/blob/master/.github/workflows/deploy-gh-pages.yml)
+* [GitLab pages](https://docs.gitlab.com/ee/user/project/pages/): [`.gitlab-ci.yml`](https://github.com/metachris/typescript-boilerplate/blob/master/.gitlab-ci.yml)
 
 This is the documentation for this boilerplate project: https://metachris.github.io/typescript-boilerplate/
 

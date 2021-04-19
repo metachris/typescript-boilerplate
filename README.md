@@ -55,11 +55,12 @@ yarn esbuild-node:dev
 yarn esbuild-node:watch
 ```
 
-You can generate a full build with both `tsc` and `esbuild` with `yarn build-all`.
+You can generate a full clean build with `yarn build-all` (which uses both `tsc` and `esbuild`).
 
-* The `package.json` includes `scripts` for various esbuild commands: [see here](https://github.com/metachris/typescript-boilerplate/blob/master/package.json#L23)
+* `package.json` includes `scripts` for various esbuild commands: [see here](https://github.com/metachris/typescript-boilerplate/blob/master/package.json#L23)
 * `esbuild` has a `--global-name=xyz` flag, to store the exports from the entry point in a global variable. See also the [esbuild "Global name" docs](https://esbuild.github.io/api/#global-name).
 * Read more about the esbuild setup [here](https://www.metachris.com/2021/04/starting-a-typescript-project-in-2021/#esbuild).
+* esbuild for the browser uses the IIFE (immediately-invoked function expression) format, which executes the bundled code on load (see also https://github.com/evanw/esbuild/issues/29)
 
 
 ## Tests with Jest

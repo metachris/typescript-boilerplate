@@ -111,11 +111,12 @@
 <span style="color: #000000">yarn esbuild-node:dev</span>
 <span style="color: #000000">yarn esbuild-node:watch</span>
 </code></pre>
-				<p>You can generate a full build with both <code>tsc</code> and <code>esbuild</code> with <code>yarn build-all</code>.</p>
+				<p>You can generate a full clean build with <code>yarn build-all</code> (which uses both <code>tsc</code> and <code>esbuild</code>).</p>
 				<ul>
-					<li>The <code>package.json</code> includes <code>scripts</code> for various esbuild commands: <a href="https://github.com/metachris/typescript-boilerplate/blob/master/package.json#L23">see here</a></li>
+					<li><code>package.json</code> includes <code>scripts</code> for various esbuild commands: <a href="https://github.com/metachris/typescript-boilerplate/blob/master/package.json#L23">see here</a></li>
 					<li><code>esbuild</code> has a <code>--global-name=xyz</code> flag, to store the exports from the entry point in a global variable. See also the <a href="https://esbuild.github.io/api/#global-name">esbuild &quot;Global name&quot; docs</a>.</li>
 					<li>Read more about the esbuild setup <a href="https://www.metachris.com/2021/04/starting-a-typescript-project-in-2021/#esbuild">here</a>.</li>
+					<li>esbuild for the browser uses the IIFE (immediately-invoked function expression) format, which executes the bundled code on load (see also <a href="https://github.com/evanw/esbuild/issues/29">https://github.com/evanw/esbuild/issues/29</a>)</li>
 				</ul>
 				<a href="#tests-with-jest" id="tests-with-jest" style="color: inherit; text-decoration: none;">
 					<h2>Tests with Jest</h2>

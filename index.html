@@ -117,6 +117,22 @@
 					<li><code>esbuild</code> has a <code>--global-name=xyz</code> flag, to store the exports from the entry point in a global variable. See also the <a href="https://esbuild.github.io/api/#global-name">esbuild &quot;Global name&quot; docs</a>.</li>
 					<li>Read more about the esbuild setup <a href="https://www.metachris.com/2021/04/starting-a-typescript-project-in-2021/#esbuild">here</a>.</li>
 				</ul>
+				<a href="#tests-with-jest" id="tests-with-jest" style="color: inherit; text-decoration: none;">
+					<h2>Tests with Jest</h2>
+				</a>
+				<p>You can write <a href="https://jestjs.io/docs/getting-started">Jest tests</a> <a href="https://github.com/metachris/typescript-boilerplate/blob/master/src/main.test.ts">like this</a>:</p>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">greet</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./main&#039;</span>
+
+<span style="color: #795E26">test</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;the data is peanut butter&#039;</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #098658">1</span><span style="color: #000000">).</span><span style="color: #795E26">toBe</span><span style="color: #000000">(</span><span style="color: #098658">1</span><span style="color: #000000">)</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #795E26">test</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;greeting&#039;</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #795E26">greet</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Foo&#039;</span><span style="color: #000000">)).</span><span style="color: #795E26">toBe</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Hello Foo&#039;</span><span style="color: #000000">)</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<p>Run the tests with <code>yarn test</code>, no separate compile step is necessary.</p>
+				<p>See also the <a href="https://jestjs.io/docs/getting-started">Jest documentation</a>.</p>
 				<a href="#documentation-published-with-ci" id="documentation-published-with-ci" style="color: inherit; text-decoration: none;">
 					<h2>Documentation, published with CI</h2>
 				</a>

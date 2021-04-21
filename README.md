@@ -83,7 +83,7 @@ Run the tests with `yarn test`, no separate compile step is necessary.
 
 * See also the [Jest documentation](https://jestjs.io/docs/getting-started).
 * The tests can be automatically run in CI (GitHub Actions, GitLab CI): [`.github/workflows/lint-and-test.yml`](https://github.com/metachris/typescript-boilerplate/blob/master/.github/workflows/lint-and-test.yml), [`.gitlab-ci.yml`](https://github.com/metachris/typescript-boilerplate/blob/master/.gitlab-ci.yml)
-
+* Take a look at ava, a really great Node.js test runner: https://github.com/avajs/ava
 
 ## Documentation, published with CI
 

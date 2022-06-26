@@ -87,7 +87,7 @@ Run the tests with `yarn test`, no separate compile step is necessary.
 
 ## Documentation, published with CI
 
-You can auto-generate API documentation from the TyoeScript source files using [TypeDoc](https://typedoc.org/guides/doccomments/). The generated documentation can be published to GitHub / GitLab pages through the CI.
+You can auto-generate API documentation from the TypeScript source files using [TypeDoc](https://typedoc.org/guides/doccomments/). The generated documentation can be published to GitHub / GitLab pages through the CI.
 
 Generate the documentation, using `src/main.ts` as entrypoint (configured in package.json):
 

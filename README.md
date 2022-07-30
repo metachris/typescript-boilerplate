@@ -1,6 +1,6 @@
 # TypeScript Boilerplate for 2022
 
-[![Build and test status](https://github.com/metachris/typescript-boilerplate/workflows/Lint%20and%20test/badge.svg)](https://github.com/metachris/typescript-boilerplate/actions?query=workflow%3A%22Build+and+test%22)
+[![QA status](https://github.com/ilyar/typescript-boilerplate/workflows/qa/badge.svg)](https://github.com/ilyar/typescript-boilerplate/actions?query=workflow%3A%22qa%22)
 
 TypeScript project boilerplate with modern tooling, for Node.js programs, libraries and browser modules. Get started quickly and right-footed 🚀
 
@@ -19,7 +19,7 @@ See also the introduction blog post: **[Starting a TypeScript Project in 2021](h
 
 ```bash
 # Clone the repository (you can also click "Use this template")
-git clone https://github.com/metachris/typescript-boilerplate.git your_project_name
+git clone https://github.com/ilyar/typescript-boilerplate.git your_project_name
 cd your_project_name
 
 # Edit `package.json` and `tsconfig.json` to your liking
@@ -32,13 +32,13 @@ yarn install
 yarn cli
 yarn lint
 yarn test
-yarn build-all
+yarn build
 yarn ts-node <filename>
-yarn esbuild-browser
+yarn build-browser
 ...
 ```
 
-* Take a look at all the scripts in [`package.json`](https://github.com/metachris/typescript-boilerplate/blob/master/package.json)
+* Take a look at all the scripts in [`package.json`](https://github.com/ilyar/typescript-boilerplate/blob/master/package.json)
 * For publishing to npm, use `yarn publish` (or `npm publish`)
 
 ## esbuild
@@ -47,17 +47,17 @@ yarn esbuild-browser
 
 ```bash
 # Build for browsers
-yarn esbuild-browser:dev
-yarn esbuild-browser:watch
+yarn build-browser:dev
+yarn build-browser:watch
 
 # Build the cli for node
-yarn esbuild-node:dev
-yarn esbuild-node:watch
+yarn build-node:dev
+yarn build-node:watch
 ```
 
 You can generate a full clean build with `yarn build-all` (which uses both `tsc` and `esbuild`).
 
-* `package.json` includes `scripts` for various esbuild commands: [see here](https://github.com/metachris/typescript-boilerplate/blob/master/package.json#L23)
+* `package.json` includes `scripts` for various esbuild commands: [see here](https://github.com/ilyar/typescript-boilerplate/blob/master/package.json#L23)
 * `esbuild` has a `--global-name=xyz` flag, to store the exports from the entry point in a global variable. See also the [esbuild "Global name" docs](https://esbuild.github.io/api/#global-name).
 * Read more about the esbuild setup [here](https://www.metachris.com/2021/04/starting-a-typescript-project-in-2021/#esbuild).
 * esbuild for the browser uses the IIFE (immediately-invoked function expression) format, which executes the bundled code on load (see also https://github.com/evanw/esbuild/issues/29)
@@ -65,7 +65,7 @@ You can generate a full clean build with `yarn build-all` (which uses both `tsc`
 
 ## Tests with Jest
 
-You can write [Jest tests](https://jestjs.io/docs/getting-started) [like this](https://github.com/metachris/typescript-boilerplate/blob/master/src/main.test.ts):
+You can write [Jest tests](https://jestjs.io/docs/getting-started) [like this](https://github.com/ilyar/typescript-boilerplate/blob/master/src/main.test.ts):
 
 ```typescript
 import { greet } from './main'
@@ -82,7 +82,7 @@ test('greeting', () => {
 Run the tests with `yarn test`, no separate compile step is necessary.
 
 * See also the [Jest documentation](https://jestjs.io/docs/getting-started).
-* The tests can be automatically run in CI (GitHub Actions, GitLab CI): [`.github/workflows/lint-and-test.yml`](https://github.com/metachris/typescript-boilerplate/blob/master/.github/workflows/lint-and-test.yml), [`.gitlab-ci.yml`](https://github.com/metachris/typescript-boilerplate/blob/master/.gitlab-ci.yml)
+* The tests can be automatically run in CI (GitHub Actions, GitLab CI): [`.github/workflows/lint-and-test.yml`](https://github.com/ilyar/typescript-boilerplate/blob/master/.github/workflows/lint-and-test.yml), [`.gitlab-ci.yml`](https://github.com/ilyar/typescript-boilerplate/blob/master/.gitlab-ci.yml)
 * Take a look at other modern test runners such as [ava](https://github.com/avajs/ava), [uvu](https://github.com/lukeed/uvu) and [tape](https://github.com/substack/tape)
 
 ## Documentation, published with CI
@@ -98,10 +98,10 @@ yarn docs
 The resulting HTML is saved in `docs/`.
 
 You can publish the documentation through CI:
-* [GitHub pages](https://pages.github.com/): See [`.github/workflows/deploy-gh-pages.yml`](https://github.com/metachris/typescript-boilerplate/blob/master/.github/workflows/deploy-gh-pages.yml)
-* [GitLab pages](https://docs.gitlab.com/ee/user/project/pages/): [`.gitlab-ci.yml`](https://github.com/metachris/typescript-boilerplate/blob/master/.gitlab-ci.yml)
+* [GitHub pages](https://pages.github.com/): See [`.github/workflows/deploy-gh-pages.yml`](https://github.com/ilyar/typescript-boilerplate/blob/master/.github/workflows/deploy-gh-pages.yml)
+* [GitLab pages](https://docs.gitlab.com/ee/user/project/pages/): [`.gitlab-ci.yml`](https://github.com/ilyar/typescript-boilerplate/blob/master/.gitlab-ci.yml)
 
-This is the documentation for this boilerplate project: https://metachris.github.io/typescript-boilerplate/
+This is the documentation for this boilerplate project: https://ilyar.github.io/typescript-boilerplate/
 
 ## References
 
@@ -119,4 +119,5 @@ This is the documentation for this boilerplate project: https://metachris.github
 Reach out with feedback and ideas:
 
 * [twitter.com/metachris](https://twitter.com/metachris)
-* [Create a new issue](https://github.com/metachris/typescript-boilerplate/issues)
+* [Create a new issue for metachris](https://github.com/metachris/typescript-boilerplate/issues)
+* [Create a new issue for ilyar](https://github.com/ilyar/typescript-boilerplate/issues)

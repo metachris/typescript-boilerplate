@@ -1,20 +1,32 @@
-image: node:12
+image: node:16
 
 cache:
+  key:
+    files:
+      - yarn.lock
   paths:
     - node_modules/
 
 stages:
-  - test
+  - qa
   - deploy
 
-lint-and-test:
-  stage: test
+lint:
+  stage: qa
   script:
     - yarn install
-    - yarn add -D esbuild
-    - yarn test
     - yarn lint
+
+test:
+  stage: qa
+  script:
+    - yarn install
+    - yarn test
+
+build:
+  stage: qa
+  script:
+    - yarn install
     - yarn build-all
 
 # Deploy docs to Gitlab pages

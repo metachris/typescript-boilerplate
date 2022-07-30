@@ -10,27 +10,62 @@
     "boilerplate",
     "esbuild"
   ],
-  "main": "./dist/tsc/main.js",
-  "types": "./dist/tsc/main.d.ts",
-  "browser": "./dist/esbuild/browser.js",
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "browser": "./dist/es/browser.js",
   "bin": {
-    "my-cli-tool": "./dist/esbuild/cli.js"
+    "my-cli-tool": "./dist/es/cli.js"
   },
   "scripts": {
     "cli": "ts-node src/cli.ts",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "test": "jest",
-    "clean": "rm -rf dist build package",
+    "clean": "rm -rf dist",
     "ts-node": "ts-node",
     "docs": "typedoc --entryPoints src/main.ts",
-    "build": "tsc -p tsconfig.json",
-    "build-all": "yarn clean && yarn build && yarn esbuild-node && yarn esbuild-browser",
-    "esbuild-browser": "esbuild src/browser.ts --bundle --minify --sourcemap=external --outfile=dist/esbuild/browser.js",
-    "esbuild-browser:dev": "esbuild src/browser.ts --bundle --outfile=dist/esbuild/browser.js",
-    "esbuild-browser:watch": "esbuild src/browser.ts --bundle --watch --outfile=dist/esbuild/browser.js",
-    "esbuild-node": "esbuild src/cli.ts --bundle --platform=node --minify --sourcemap=external --outfile=dist/esbuild/cli.js",
-    "esbuild-node:dev": "esbuild src/cli.ts --bundle --platform=node --sourcemap=external --outfile=dist/esbuild/cli.js",
-    "esbuild-node:watch": "esbuild src/cli.ts --bundle --platform=node --watch --sourcemap=external --outfile=dist/esbuild/cli.js"
+    "build": "yarn clean && yarn build-es && yarn build-node && yarn build-browser",
+    "build-es": "tsc -p tsconfig.json",
+    "build-browser": "esbuild src/browser.ts --bundle --minify --sourcemap=external --outfile=dist/es/browser.js",
+    "build-browser:dev": "esbuild src/browser.ts --bundle --outfile=dist/es/browser.js",
+    "build-browser:watch": "esbuild src/browser.ts --bundle --watch --outfile=dist/es/browser.js",
+    "build-node": "esbuild src/cli.ts --bundle --platform=node --minify --sourcemap=external --outfile=dist/es/cli.js",
+    "build-node:dev": "esbuild src/cli.ts --bundle --platform=node --sourcemap=external --outfile=dist/es/cli.js",
+    "build-node:watch": "esbuild src/cli.ts --bundle --platform=node --watch --sourcemap=external --outfile=dist/es/cli.js"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "arrowParens": "always",
+    "printWidth": 100
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "prettier",
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "extends": [
+      "prettier",
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended"
+    ]
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.+(ts|tsx|js)",
+      "**/?(*.)+(spec|test).+(ts|tsx|js)"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    }
   },
   "devDependencies": {
     "@types/jest": "^27.4.1",
@@ -40,6 +75,7 @@
     "esbuild": "^0.14.38",
     "eslint": "^8.14.0",
     "jest": "27.0.0",
+    "prettier": "^2.7.1",
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
     "typedoc": "^0.22.15",

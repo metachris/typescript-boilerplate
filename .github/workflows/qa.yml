@@ -1,4 +1,4 @@
-name: Lint and test
+name: qa
 
 on: [push, pull_request]
 
@@ -8,18 +8,24 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        nodejs: [12, 14]
+        nodejs: [
+          12,
+          14,
+          16,
+        ]
+        action: [
+          lint,
+          test,
+          build,
+        ]
 
     steps:
     - uses: actions/checkout@v2
-
     # https://github.com/actions/setup-node
-    - uses: actions/setup-node@v2-beta
+    - uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.nodejs }}
-
+        cache: 'yarn'
+        cache-dependency-path: '**/yarn.lock'
     - run: yarn install
-    - run: yarn add -D esbuild
-    - run: yarn test
-    - run: yarn lint
-    - run: yarn build-all
+    - run: yarn ${{ matrix.action }}

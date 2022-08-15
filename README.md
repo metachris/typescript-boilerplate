@@ -41,6 +41,16 @@ yarn esbuild-browser
 * Take a look at all the scripts in [`package.json`](https://github.com/metachris/typescript-boilerplate/blob/master/package.json)
 * For publishing to npm, use `yarn publish` (or `npm publish`)
 
+You may use this boilerplate as static [charmix archetype](https://github.com/vitonsky/charmix)
+
+```bash
+# Install archetype
+charmix add -t git https://github.com/metachris/typescript-boilerplate.git
+
+# Generate project
+charmix use -d ./projectDirectory typescript-boilerplate
+```
+
 ## esbuild
 
 [esbuild](https://esbuild.github.io/) is an extremely fast bundler that supports a [large part of the TypeScript syntax](https://esbuild.github.io/content-types/#typescript). This project uses it to bundle for browsers (and Node.js if you want).

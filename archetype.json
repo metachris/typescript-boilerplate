@@ -1,0 +1,8 @@
+{
+    "name": "typescript-boilerplate",
+    "type": "staticTemplate",
+    "files": {
+      "include": "./*",
+      "exclude": ["./archetype.json"]
+    }
+}
